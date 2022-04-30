@@ -1,2 +1,4 @@
-package com.nhnacademy.board;public class FrontServlet {
+package com.nhnacademy.board;
+
+public class FrontServlet {
 }
