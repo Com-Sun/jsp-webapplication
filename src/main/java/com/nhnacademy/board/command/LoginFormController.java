@@ -11,7 +11,9 @@ public class LoginFormController implements Command {
         HttpSession session = request.getSession(false);
         if (Objects.isNull(session) || Objects.isNull(session.getAttribute("id"))) {
             return "/loginForm.jsp";
-        } else {
+        } else if (session.getAttribute("id").equals("admin")) {
+            return "/user.jsp";
+        } else { //여기서 admin인경우
             return"/loginSuccess.jsp";
         }
     }

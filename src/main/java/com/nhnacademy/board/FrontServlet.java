@@ -4,6 +4,7 @@ import com.nhnacademy.board.command.BoardController;
 import com.nhnacademy.board.command.Command;
 import com.nhnacademy.board.command.LoginFormController;
 import com.nhnacademy.board.command.LoginProcessingController;
+import com.nhnacademy.board.command.user.LogoutController;
 import com.nhnacademy.board.command.user.UserController;
 import com.nhnacademy.board.command.user.UserFixController;
 import com.nhnacademy.board.command.user.UserFixUpdateController;
@@ -60,6 +61,8 @@ public class FrontServlet extends HttpServlet {
             command = new LoginFormController();
         } else if ("/login.do".equals(servletPath) && "POST".equalsIgnoreCase(method)) {
             command = new LoginProcessingController("admin", "12345");
+        } else if ("/logout.do".equals(servletPath)) {
+            command = new LogoutController();
         } else if ("/board.do".equals(servletPath) && "GET".equalsIgnoreCase(method)) {
             command = new BoardController();
         } else if ("/user.do".equals(servletPath) && "GET".equalsIgnoreCase(method)) {

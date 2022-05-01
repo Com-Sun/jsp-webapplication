@@ -8,6 +8,9 @@
 </head>
 <body>
 <a href="/board.do"><fmt:message key="board" bundle="${message}"/></a><br/>
-<a href="/user.do"><fmt:message key="user" bundle="${message}"/></a><br/>
+
+<br>
+
+<a href="/logout.do"><fmt:message key="logout" bundle="${message}" /></a><br />
 </body>
 </html>

@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 public class UserRepositoryImpl implements UserRepository {
-    Map<String, User> users = new HashMap<>();
+    private Map<String, User> users = new HashMap<>();
 
     @Override
     public void add(String id, User user) {
