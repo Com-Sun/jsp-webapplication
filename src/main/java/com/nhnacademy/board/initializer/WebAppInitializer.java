@@ -27,7 +27,7 @@ public class WebAppInitializer implements ServletContainerInitializer {
         testUser.setName("test");
         testUser.setPassword("12345");
         testUser.setId("test");
-        repository.add("testUser", testUser);
+        repository.add("test", testUser);
         servletContext.setAttribute("repository", repository);
     }
 

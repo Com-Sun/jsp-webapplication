@@ -8,11 +8,14 @@
     <title>Title</title>
 </head>
 <body>
+
+<form action="/userRemove.do" method="post">
 <c:forEach var="user" items="${repository.getUsers()}">
     <p>${user}</p>
+    <td><input type='checkbox' name='user' value='${user.id}' /></td>
 </c:forEach>
+<input type='submit' />
 
-
-<a href="/">Go to main</a>
+</form>
 </body>
 </html>

@@ -8,6 +8,8 @@ import com.nhnacademy.board.command.UserController;
 import com.nhnacademy.board.command.UserGetController;
 import com.nhnacademy.board.command.UserRegisterController;
 import com.nhnacademy.board.command.UserRegisterUpdateController;
+import com.nhnacademy.board.command.UserRemoveController;
+import com.nhnacademy.board.command.UserRemoveUpdateController;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -66,7 +68,12 @@ public class FrontServlet extends HttpServlet {
             command = new UserRegisterController();
         } else if ("/userGet.do".equals(servletPath) && "GET".equalsIgnoreCase(method)) {
             command = new UserGetController();
+        } else if ("/userRemove.do".equals(servletPath) && "GET".equalsIgnoreCase(method)) {
+            command = new UserRemoveController();
+        } else if ("/userRemove.do".equals(servletPath) && "POST".equalsIgnoreCase(method)) {
+            command = new UserRemoveUpdateController();
         }
+
 
 
 //        else if ("/cart.do".equals(servletPath) && "POST".equalsIgnoreCase(method)) {

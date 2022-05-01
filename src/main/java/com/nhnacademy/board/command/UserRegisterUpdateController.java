@@ -21,7 +21,7 @@ public class UserRegisterUpdateController implements Command{
 
         UserRepository userRepository =
             (UserRepository) request.getServletContext().getAttribute("repository");
-        userRepository.add("id", user);
+        userRepository.add(id , user);
 
         return "/";
     }
