@@ -75,10 +75,8 @@ public class UserImpl implements User {
     public String toString() {
         return "UserImpl{" +
             "id='" + id + '\'' +
-            ", password='" + password + '\'' +
             ", name='" + name + '\'' +
             ", profileFileName='" + profileFileName + '\'' +
-            ", admin=" + admin +
             '}';
     }
 }

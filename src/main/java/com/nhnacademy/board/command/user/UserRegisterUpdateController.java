@@ -1,5 +1,6 @@
-package com.nhnacademy.board.command;
+package com.nhnacademy.board.command.user;
 
+import com.nhnacademy.board.command.Command;
 import com.nhnacademy.board.domain.User;
 import com.nhnacademy.board.domain.UserRepository;
 import com.nhnacademy.board.domain.impl.UserImpl;
@@ -7,7 +8,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class UserRegisterUpdateController implements Command{
+public class UserRegisterUpdateController implements Command {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         String id = request.getParameter("id");

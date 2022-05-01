@@ -4,12 +4,14 @@ import com.nhnacademy.board.command.BoardController;
 import com.nhnacademy.board.command.Command;
 import com.nhnacademy.board.command.LoginFormController;
 import com.nhnacademy.board.command.LoginProcessingController;
-import com.nhnacademy.board.command.UserController;
-import com.nhnacademy.board.command.UserGetController;
-import com.nhnacademy.board.command.UserRegisterController;
-import com.nhnacademy.board.command.UserRegisterUpdateController;
-import com.nhnacademy.board.command.UserRemoveController;
-import com.nhnacademy.board.command.UserRemoveUpdateController;
+import com.nhnacademy.board.command.user.UserController;
+import com.nhnacademy.board.command.user.UserFixController;
+import com.nhnacademy.board.command.user.UserFixUpdateController;
+import com.nhnacademy.board.command.user.UserGetController;
+import com.nhnacademy.board.command.user.UserRegisterController;
+import com.nhnacademy.board.command.user.UserRegisterUpdateController;
+import com.nhnacademy.board.command.user.UserRemoveController;
+import com.nhnacademy.board.command.user.UserRemoveUpdateController;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -72,23 +74,12 @@ public class FrontServlet extends HttpServlet {
             command = new UserRemoveController();
         } else if ("/userRemove.do".equals(servletPath) && "POST".equalsIgnoreCase(method)) {
             command = new UserRemoveUpdateController();
+        } else if ("/userFix.do".equals(servletPath) && "GET".equalsIgnoreCase(method)) {
+            command = new UserFixController();
+        } else if ("/userFix.do".equals(servletPath) && "POST".equalsIgnoreCase(method)) {
+            command = new UserFixUpdateController();
         }
 
-
-
-//        else if ("/cart.do".equals(servletPath) && "POST".equalsIgnoreCase(method)) {
-//            command = new CartUpdateController();
-//        } else if ("/foods.do".equals(servletPath)) {
-//            command = new FoodListController();
-//        } else if ("/login.do".equals(servletPath) && "GET".equalsIgnoreCase(method)) {
-//            command = new LoginFormController();
-//        } else if ("/login.do".equals(servletPath) && "POST".equalsIgnoreCase(method)) {
-//            command = new LoginProcessingController("admin", "12345");
-//        } else if ("/logout.do".equals(servletPath)) {
-//            command = new LogoutController();
-//        } else if ("/change-lang.do".equals(servletPath)) {
-//            command = new LangController();
-//        }
 
         return command;
     }

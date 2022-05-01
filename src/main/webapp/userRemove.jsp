@@ -12,7 +12,7 @@
 <form action="/userRemove.do" method="post">
 <c:forEach var="user" items="${repository.getUsers()}">
     <p>${user}</p>
-    <td><input type='checkbox' name='user' value='${user.id}' /></td>
+    <input type='checkbox' name='user' value='${user.id}' />
 </c:forEach>
 <input type='submit' />
 

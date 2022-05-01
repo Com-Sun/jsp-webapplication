@@ -18,7 +18,8 @@ import javax.servlet.http.HttpSession;
 
 @WebFilter(filterName = "loginCheckFilter", urlPatterns = "*.do", initParams = {
     @WebInitParam(name = "whitelist", value = "/loginForm.do\n"
-    + "/board.do")
+    + "/board.do\n"
+    + "/user.do")
 })
 public class LoginCheckFilter implements Filter {
     private List<String> whitelists;
