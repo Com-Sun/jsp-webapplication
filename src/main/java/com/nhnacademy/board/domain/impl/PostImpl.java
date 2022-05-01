@@ -70,4 +70,16 @@ public class PostImpl implements Post {
     public void increaseViewCount() {
         this.viewCount++;
     }
+
+    @Override
+    public String toString() {
+        return "PostImpl{" +
+            "id=" + id +
+            ", title='" + title + '\'' +
+            ", content='" + content + '\'' +
+            ", writerUserId='" + writerUserId + '\'' +
+            ", writeTime=" + writeTime +
+            ", viewCount=" + viewCount +
+            '}';
+    }
 }

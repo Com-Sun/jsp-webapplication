@@ -1,7 +1,9 @@
 package com.nhnacademy.board.initializer;
 
+import com.nhnacademy.board.domain.PostRepository;
 import com.nhnacademy.board.domain.User;
 import com.nhnacademy.board.domain.UserRepository;
+import com.nhnacademy.board.domain.impl.PostRepositoryImpl;
 import com.nhnacademy.board.domain.impl.UserImpl;
 import com.nhnacademy.board.domain.impl.UserRepositoryImpl;
 import java.util.Set;
@@ -24,6 +26,8 @@ public class WebAppInitializer implements ServletContainerInitializer {
         UserRepository repository = new UserRepositoryImpl();
         repository.add("admin", admin);
         servletContext.setAttribute("repository", repository);
+        PostRepository postRepository = new PostRepositoryImpl();
+        servletContext.setAttribute("postRepository", postRepository);
     }
 
     private User getAdmin() {

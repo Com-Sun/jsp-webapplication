@@ -1,9 +1,11 @@
 package com.nhnacademy.board;
 
-import com.nhnacademy.board.command.BoardController;
+import com.nhnacademy.board.command.board.BoardController;
 import com.nhnacademy.board.command.Command;
 import com.nhnacademy.board.command.LoginFormController;
 import com.nhnacademy.board.command.LoginProcessingController;
+import com.nhnacademy.board.command.board.BoardRegisterController;
+import com.nhnacademy.board.command.board.BoardRegisterUpdateController;
 import com.nhnacademy.board.command.user.LogoutController;
 import com.nhnacademy.board.command.user.UserController;
 import com.nhnacademy.board.command.user.UserFixController;
@@ -81,6 +83,10 @@ public class FrontServlet extends HttpServlet {
             command = new UserFixController();
         } else if ("/userFix.do".equals(servletPath) && "POST".equalsIgnoreCase(method)) {
             command = new UserFixUpdateController();
+        } else if ("/boardRegister.do".equals(servletPath) && "GET".equalsIgnoreCase(method)) {
+            command = new BoardRegisterController();
+        } else if ("/boardRegister.do".equals(servletPath) && "POST".equalsIgnoreCase(method)) {
+            command = new BoardRegisterUpdateController();
         }
 
 
