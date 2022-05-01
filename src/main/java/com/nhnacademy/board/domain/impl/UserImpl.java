@@ -70,4 +70,15 @@ public class UserImpl implements User {
     public int hashCode() {
         return Objects.hash(id, password, name, profileFileName);
     }
+
+    @Override
+    public String toString() {
+        return "UserImpl{" +
+            "id='" + id + '\'' +
+            ", password='" + password + '\'' +
+            ", name='" + name + '\'' +
+            ", profileFileName='" + profileFileName + '\'' +
+            ", admin=" + admin +
+            '}';
+    }
 }

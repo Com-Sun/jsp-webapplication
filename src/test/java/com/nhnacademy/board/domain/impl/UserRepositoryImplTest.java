@@ -36,4 +36,18 @@ class UserRepositoryImplTest {
         assertThat(userRepository.getUser("hyunjinId")).isNull();
     }
 
+
+    @Test
+    @DisplayName("getUsers가 제대로 동작하는지 확인하는 test")
+    void getUsersTest(){
+        User newUser = new UserImpl();
+        newUser.setName("aaa");
+        newUser.setId("aaa");
+        newUser.setPassword("aaa");
+        userRepository.add("aaa", newUser);
+
+        System.out.println(userRepository.getUsers());
+        assertThat(userRepository.getUsers().size()).isEqualTo(2);
+    }
+
 }

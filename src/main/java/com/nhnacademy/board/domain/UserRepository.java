@@ -9,5 +9,5 @@ public interface UserRepository {
     void remove(String id);
 
     User getUser(String id);
-    Map<String, User> getUsers();
+    List<User> getUsers();
 }

@@ -23,6 +23,11 @@ public class WebAppInitializer implements ServletContainerInitializer {
         User admin = getAdmin();
         UserRepository repository = new UserRepositoryImpl();
         repository.add("admin", admin);
+        User testUser = new UserImpl();
+        testUser.setName("test");
+        testUser.setPassword("12345");
+        testUser.setId("test");
+        repository.add("testUser", testUser);
         servletContext.setAttribute("repository", repository);
     }
 

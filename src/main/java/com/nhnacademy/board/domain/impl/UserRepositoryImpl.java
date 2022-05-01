@@ -2,6 +2,7 @@ package com.nhnacademy.board.domain.impl;
 
 import com.nhnacademy.board.domain.User;
 import com.nhnacademy.board.domain.UserRepository;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -30,7 +31,7 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
-    public Map<String, User> getUsers() {
-        return users;
+    public List<User> getUsers() {
+        return new ArrayList<>(users.values());
     }
 }

@@ -4,10 +4,12 @@ import com.nhnacademy.board.command.BoardController;
 import com.nhnacademy.board.command.Command;
 import com.nhnacademy.board.command.LoginFormController;
 import com.nhnacademy.board.command.LoginProcessingController;
-import com.nhnacademy.board.domain.UserRepository;
+import com.nhnacademy.board.command.UserController;
+import com.nhnacademy.board.command.UserGetController;
+import com.nhnacademy.board.command.UserRegisterController;
+import com.nhnacademy.board.command.UserRegisterUpdateController;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,7 +29,7 @@ public class FrontServlet extends HttpServlet {
         resp.setCharacterEncoding("UTF-8");
 
         try {
-            Command command  = resolveCommand(req.getServletPath(), req.getMethod());
+            Command command = resolveCommand(req.getServletPath(), req.getMethod());
             String view = command.execute(req, resp);
 
             if (view.startsWith(REDIRECT_PREFIX)) {
@@ -54,10 +56,19 @@ public class FrontServlet extends HttpServlet {
             command = new LoginFormController();
         } else if ("/login.do".equals(servletPath) && "POST".equalsIgnoreCase(method)) {
             command = new LoginProcessingController("admin", "12345");
-
-        } else if("/board.do".equals(servletPath) && "GET".equalsIgnoreCase(method)) {
+        } else if ("/board.do".equals(servletPath) && "GET".equalsIgnoreCase(method)) {
             command = new BoardController();
+        } else if ("/user.do".equals(servletPath) && "GET".equalsIgnoreCase(method)) {
+            command = new UserController();
+        } else if ("/userRegister.do".equals(servletPath) && "POST".equalsIgnoreCase(method)) {
+            command = new UserRegisterUpdateController();
+        } else if ("/userRegister.do".equals(servletPath) && "GET".equalsIgnoreCase(method)) {
+            command = new UserRegisterController();
+        } else if ("/userGet.do".equals(servletPath) && "GET".equalsIgnoreCase(method)) {
+            command = new UserGetController();
         }
+
+
 //        else if ("/cart.do".equals(servletPath) && "POST".equalsIgnoreCase(method)) {
 //            command = new CartUpdateController();
 //        } else if ("/foods.do".equals(servletPath)) {
