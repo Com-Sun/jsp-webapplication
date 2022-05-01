@@ -4,9 +4,9 @@
 <fmt:setBundle basename="messages" var="message" />
 <html>
 <head>
-    <title>Board</title>
+    <title>Title</title>
 </head>
 <body>
-<a href="/board.do"><fmt:message key="board" bundle="${message}"/></a><br/>
+<h1>hi</h1>
 </body>
 </html>
